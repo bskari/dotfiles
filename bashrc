@@ -62,14 +62,14 @@ fi
 
 # Calculator config
 export BC_ENV_ARGS="$HOME/.bcrc"
-if [ ! -f $BC_ENV_ARGS ];
+if [ ! -f "$BC_ENV_ARGS" ];
 then
 	export BC_ENV_ARGS=""
 fi
 
 # Lynx config
 export LYNX_CFG="$HOME/.lynx.cfg"
-if [ ! -f $LYNX_CFG ];
+if [ ! -f "$LYNX_CFG" ];
 then
 	export LYNX_CFG=""
 fi
@@ -81,9 +81,9 @@ HISTCONTROL=ignoreboth
 # Append to history instead of overwriting when exiting the shell
 shopt -s histappend
 
-# A command that is the name of the directory just cd's into it
-shopt -s autocd
-# Minor errors in the spelling of a directory in a commend will be corrected
+## A command that is the name of the directory just cd's into it
+#shopt -s autocd
+# Minor errors in the spelling of a directory in a command will be corrected
 shopt -s cdspell
 # The pattern ** matches all files and directories recursively
 shopt -s globstar
