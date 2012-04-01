@@ -1,6 +1,5 @@
 set tabstop=4		" tab width is 4 columns
 set shiftwidth=4	" indent 4 columns with << and >> reindent
-set expandtab       " spaces instead of tabs
 syntax on			" syntax highlighting
 set showcmd			" show the pending command in the status bar
 set nocompatible	" set to vim, non-compatible with vi
