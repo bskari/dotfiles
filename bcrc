@@ -1,0 +1,41 @@
+scale = 20
+
+define fact(n)
+{
+	if (n <= 1)
+		return 1
+	return n * fact(n - 1)
+}
+
+define choose(a, b)
+{
+	return fact(a) / fact(b) / fact(a - b)
+}
+
+define round(n)
+{
+	oldscale = scale
+	if (n >= 0)
+		value = (n + 0.5)
+	if (n < 0)
+		value = (n - 0.5)
+	scale = 0
+	rounded = value / 1
+	scale = oldscale
+	return rounded
+}
+
+define fib(n)
+{
+	(theta = 1 + sqrt(5)) / 2
+	return round((theta^n - (-1 / theta)^2) / sqrt(5))
+}
+
+define fib2(n)
+{
+	if (n <= 0)
+		return 0
+	if (1 == n)
+		return 1
+	return fib2(n - 1) + fib2(n - 2)
+}
