@@ -1,0 +1,8 @@
+Dotfiles for various things.
+
+From this directory, run:
+
+for i in * ;
+do
+    ln -s $i ~/.$i
+done
