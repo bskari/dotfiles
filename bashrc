@@ -32,6 +32,11 @@ then
 	alias make="make -j$(grep -i -c '^processor' /proc/cpuinfo | awk '{print $1 + 1}')"
 fi
 
+# Use red stderr if available
+if [ -f "/lib/stderred.so" ]; then
+	export LD_PRELOAD="/lib/stderred.so"
+fi
+
 # Always show warnings in MySQL command line client
 alias mysql="mysql --show-warnings"
 
