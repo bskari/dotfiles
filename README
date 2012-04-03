@@ -1,8 +1,12 @@
 Dotfiles for various things.
 
-From this directory, run:
+.bashrc should probably look like this:
+-----
+source $HOME/.dotfiles/bashrc
+-----
 
-for i in * ;
-do
-    ln -s $i ~/.$i
-done
+.vimrc should probably look like this:
+-----
+set expandtab    " Use spaces instead of tabs
+"set noexpandtab  " Use tabs instead of spaces
+source $HOME/.dotfiles/vimrc
