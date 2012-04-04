@@ -1,4 +1,5 @@
 set tabstop=4       " Tab width is 4 columns
+set softtabstop=4   " Allow unindenting with backspace
 set shiftwidth=4    " Indent 4 columns with << and >> reindent
 syntax on           " Syntax highlighting
 set showcmd         " Show the pending command in the status bar
@@ -13,6 +14,11 @@ set wildmenu        " Use bash style completion
 set wildmode=list:longest
 "set number         " Show line numbers
 set mouse=a         " Enable mouse support
+set lazyredraw      " Don't redraw the screen while executing macros
+set backspace=indent,eol,start " Backspace key deletes spaces and lines
+set autoindent      " Keep the indent level when hitting return
+set smartindent     " Indent intelligently (C/C++ mostly)
+set cindent         " Prevents indenting Python poorly
 
 " Information status line
 set statusline=%t       " Tail of the filename
