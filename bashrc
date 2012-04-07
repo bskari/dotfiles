@@ -80,6 +80,7 @@ then
 fi
 
 export PATH="$PATH:/sbin:/usr/sbin"
+export EDITOR='vim'
 
 # History ignores successive commands
 HISTCONTROL=ignoreboth
