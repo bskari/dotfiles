@@ -9,4 +9,8 @@ source $HOME/.dotfiles/bashrc
 -----
 set expandtab    " Use spaces instead of tabs
 "set noexpandtab  " Use tabs instead of spaces
+
+call pathogen#infect() " Load pathogen plugin manager
+
 source $HOME/.dotfiles/vimrc
+-----
