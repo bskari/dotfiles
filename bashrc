@@ -41,23 +41,18 @@ fi
 alias mysql="mysql --show-warnings"
 
 # Print directory contents on cd
-_cd() {
-	if [ 0 -eq $# ];
-	then
-		cd $HOME;
-	else
-		cd "${1}";
-		if [ 0 -eq $? ] && [ `ls | wc -l` -lt 50 ];
-		then
-			ls
-		fi
-	fi
+function cd() {
+    if [ 0 -eq $# ];
+    then
+        builtin cd $HOME;
+    else
+        builtin cd "$*";
+        if [ 0 -eq $? ] && [ `ls | wc -l` -lt 50 ];
+        then
+            ls
+        fi
+    fi
 }
-# Tmux breaks _cd
-if [ -z "$TMUX" ];
-then
-	alias cd=_cd
-fi
 
 # Make life more interesting, but only for interactive shells!
 # Otherwise, it breaks scp :(
