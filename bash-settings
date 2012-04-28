@@ -1,0 +1,45 @@
+# Use red stderr if available
+if [ -f "/lib/stderred.so" ]; then
+	export LD_PRELOAD="/lib/stderred.so"
+fi
+
+# Print directory contents on cd
+function cd() {
+    if [ 0 -eq $# ];
+    then
+        builtin cd $HOME;
+    else
+        builtin cd "$*";
+        if [ 0 -eq $? ] && [ `ls | wc -l` -lt 50 ];
+        then
+            ls
+        fi
+    fi
+}
+
+# Make life more interesting, but only for interactive shells!
+# Otherwise, it breaks scp :(
+if [ -n "$PS1" ] && [ "`which fortune`" ] ; then
+	echo; fortune; echo
+fi
+
+# History ignores successive commands
+HISTCONTROL=ignoreboth
+# Append to history instead of overwriting when exiting the shell
+shopt -s histappend
+
+## A command that is the name of the directory just cd's into it
+#shopt -s autocd
+# Minor errors in the spelling of a directory in a command will be corrected
+shopt -s cdspell
+# The pattern ** matches all files and directories recursively
+shopt -s globstar
+
+# Fancy prompt
+#${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\]
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN_BOLD="\[\033[01;32m\]"
+BLUE_BOLD="\[\033[01;34m\]"
+WHITE="\[\033[00m\]"
+PS1="$GREEN_BOLD\u@\h$BLUE_BOLD \w$YELLOW\$(__git_ps1) $BLUE_BOLD\$ $WHITE"
