@@ -19,7 +19,7 @@ alias less="less -R"
 # Use multi-threading in make
 if [ -f /proc/cpuinfo ] && [ "`which grep`" ] && [ "`which awk`" ];
 then
-	alias make="make -j$(grep -i -c '^processor' /proc/cpuinfo | awk '{print $1 + 1}')"
+	alias make="make -j$(grep -i -c '^processor' /proc/cpuinfo | awk '{print $1}')"
 fi
 
 # Always show warnings in MySQL command line client
