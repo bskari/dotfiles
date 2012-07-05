@@ -34,6 +34,9 @@ set statusline+=%c,     " Cursor column
 set statusline+=%l/%L   " Cursor line/total lines
 set statusline+=\ %P    " Percent through file
 
+set laststatus=2 " Always show the status line
+set showtabline=2 " Always show the tab line
+
 " Shortcuts for switching tabs
 map = gt
 map - gT
