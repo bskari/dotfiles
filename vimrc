@@ -20,6 +20,8 @@ set backspace=indent,eol,start " Backspace key deletes spaces and lines
 set autoindent      " Keep the indent level when hitting return
 set smartindent     " Indent intelligently (C/C++ mostly)
 set cindent         " Prevents indenting Python poorly
+set timeout timeoutlen=1000 " Limit delay when hitting esc
+set ttimeoutlen=100 " Limit delay when hitting esc
 
 " Information status line
 set statusline=%t       " Tail of the filename
