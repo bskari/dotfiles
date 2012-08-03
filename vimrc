@@ -66,24 +66,41 @@ set autoread
 
 " Like windo but restore the current window.
 function! WinDo(command)
-  let currwin=winnr()
-  execute 'windo ' . a:command
-  execute currwin . 'wincmd w'
+    let currwin=winnr()
+    execute 'windo ' . a:command
+    execute currwin . 'wincmd w'
 endfunction
 com! -nargs=+ -complete=command Windo call WinDo(<q-args>)
 
 " Like bufdo but restore the current buffer.
 function! BufDo(command)
-  let currBuff=bufnr("%")
-  execute 'bufdo ' . a:command
-  execute 'buffer ' . currBuff
+    let currBuff=bufnr("%")
+    execute 'bufdo ' . a:command
+    execute 'buffer ' . currBuff
 endfunction
 com! -nargs=+ -complete=command Bufdo call BufDo(<q-args>)
 
 " Like tabdo but restore the current tab.
 function! TabDo(command)
-  let currTab=tabpagenr()
-  execute 'tabdo ' . a:command
-  execute 'tabn ' . currTab
+    let currTab=tabpagenr()
+    execute 'tabdo ' . a:command
+    execute 'tabn ' . currTab
 endfunction
 com! -nargs=+ -complete=command Tabdo call TabDo(<q-args>)
+
+" Open multiple files with a single command
+command! -complete=file -nargs=+ Etabs call s:ETW('tabnew', <f-args>)
+command! -complete=file -nargs=+ Ewindows call s:ETW('new', <f-args>)
+command! -complete=file -nargs=+ Evwindows call s:ETW('vnew', <f-args>)
+function! s:ETW(what, ...)
+    for f1 in a:000
+        let files = glob(f1)
+        if files == ''
+            execute a:what . ' ' . escape(f1, '\ "')
+        else
+            for f2 in split(files, "\n")
+                execute a:what . ' ' . escape(f2, '\ "')
+            endfor
+        endif
+    endfor
+endfunction
