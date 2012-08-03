@@ -24,7 +24,7 @@ set timeout timeoutlen=1000 " Limit delay when hitting esc
 set ttimeoutlen=100 " Limit delay when hitting esc
 
 " Information status line
-set statusline=%t       " Tail of the filename
+set statusline=%F       " Full path filename
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, " file encoding
 set statusline+=%{&ff}] " File format
 set statusline+=%h      " Help file flag
