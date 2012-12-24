@@ -39,3 +39,15 @@ define fib2(n)
 		return 1
 	return fib2(n - 1) + fib2(n - 2)
 }
+
+define pow(number, exponent)
+{
+    if (exponent == int(exponent))
+    {
+        return number ^ exponent
+    }
+    else
+    {
+        return e(exponent * l(number))
+    }
+}
