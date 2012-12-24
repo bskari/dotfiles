@@ -40,8 +40,8 @@ set laststatus=2 " Always show the status line
 set showtabline=2 " Always show the tab line
 
 " Shortcuts for switching tabs
-map = gt
-map - gT
+map <TAB> gt
+map <S-TAB> gT
 
 if has("autocmd")
     " Enable file type detection.
@@ -55,11 +55,6 @@ vnoremap . :normal .<CR>
 nnoremap ` @a
 " And let it work on multiple ilnes in visual mode
 vnoremap ` :normal @a<CR>
-
-" Quick buffer switching with TAB, even with edited files
-set hidden
-nmap <TAB> :bn<CR>
-nmap <S-TAB> :bN<CR>
 
 " Auto reload files, if there's no conflict
 set autoread
