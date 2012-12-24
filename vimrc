@@ -40,8 +40,9 @@ set laststatus=2 " Always show the status line
 set showtabline=2 " Always show the tab line
 
 " Shortcuts for switching tabs
-map <TAB> gt
-map <S-TAB> gT
+nnoremap <C-TAB> :tabnext
+nnoremap <C-S-TAB> :tabprevious
+nnoremap <C-t> :tabnew
 
 if has("autocmd")
     " Enable file type detection.
@@ -99,3 +100,18 @@ function! s:ETW(what, ...)
         endif
     endfor
 endfunction
+
+" Alias commands that I keep mistyping because of shift
+command! Q q
+command! Qall qall
+command! W w
+command! Wall wall
+command! WQ wq
+command! Wq wq
+
+" Window switching: ctrl+[hjkl]
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-Q> <C-W>q
