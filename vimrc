@@ -40,8 +40,8 @@ set laststatus=2 " Always show the status line
 set showtabline=2 " Always show the tab line
 
 " Shortcuts for switching tabs
-nnoremap <TAB> :tabnext
-nnoremap <S-TAB> :tabprevious
+nnoremap <TAB> :tabnext<CR>
+nnoremap <S-TAB> :tabprevious<CR>
 
 if has("autocmd")
     " Enable file type detection.
