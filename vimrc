@@ -41,7 +41,8 @@ set showtabline=2 " Always show the tab line
 
 " Shortcuts for switching tabs
 nnoremap <TAB> :tabnext<CR>
-nnoremap <S-TAB> :tabprevious<CR>
+" Literal shift-tab; I was having problems getting <S-TAB> to be recognized
+nnoremap [Z :tabprevious<CR>
 
 if has("autocmd")
     " Enable file type detection.
