@@ -1,16 +1,5 @@
 Dotfiles for various things.
 
-.bashrc should probably look like this:
------
-source $HOME/.dotfiles/bashrc
------
-
-.vimrc should probably look like this:
------
-set expandtab    " Use spaces instead of tabs
-"set noexpandtab  " Use tabs instead of spaces
-
-call pathogen#infect() " Load pathogen plugin manager
-
-source $HOME/.dotfiles/vimrc
------
+You can just run
+cd; bash .dotfiles/setup.sh
+to get everything set up.
