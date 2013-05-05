@@ -25,7 +25,7 @@ var preferences = {
     // ***** Preferences *****
     // ***********************
 
-    "browser.tabs.warnOnClose": false,
+    "browser.tabs.warnOnClose": false
 };
 
 for (var key in preferences) {
