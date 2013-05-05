@@ -114,3 +114,21 @@ nnoremap <C-K> <C-W>k
 nnoremap <C-H> <C-W>h
 nnoremap <C-L> <C-W>l
 nnoremap <C-Q> <C-W>q
+
+" Syntastic preferences
+let g:syntastic_cpp_compiler_options = ' -Wall -Wextra -Weffc++ -std=c++0x'
+
+" Often I hold shift too long when issuing these commands.
+command! Q q
+command! Qall qall
+command! W w
+command! Wall wall
+command! WQ wq
+command! Wq wq
+nmap Q: :q
+" Never use Ex mode -- I never *mean* to press it
+nnoremap Q <ESC>
+" Never use F1 -- I'm reaching for escape
+noremap <F1> <ESC>
+noremap! <F1> <ESC>
+lnoremap <F1> <ESC>
