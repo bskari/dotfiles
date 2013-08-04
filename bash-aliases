@@ -30,3 +30,6 @@ if [ "`which colorsvn`" != "" ];
 then
 	alias svn="colorsvn"
 fi
+
+# Prompt when removing more than 3 files
+alias rm='rm -I'
