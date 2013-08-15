@@ -39,6 +39,14 @@ else
     echo "$mysql_file" 'already exists'
 fi
 
+tmux_file="$HOME/.tmux.conf"
+if [ ! -f "$tmux_file" ];
+then
+    echo 'source ~/.dotfiles/tmux.conf' > "$tmux_file"
+else
+    echo "$tmux_file" 'already exists'
+fi
+
 ########################
 # Dumb soft linked files
 ########################
@@ -70,7 +78,7 @@ else
     echo 'No Firefox directory found'
 fi
 
-for i in tmux.conf bcrc ;
+for i in bcrc ;
 do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done
