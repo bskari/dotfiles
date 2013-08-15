@@ -1,0 +1,2 @@
+--type-set=rust=.rs,.rc
+--ignore-dir=node_modules
