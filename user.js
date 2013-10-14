@@ -16,6 +16,24 @@ user_pref("network.cookie.cookieBehavior", 3);
 // ********************
 // Don't load HTTP resources when on an HTTPS site
 user_pref("security.mixed_content.block_active_content", true);
+user_pref("security.mixed_content.block_display_content", true);
+// Disable weak encryption
+user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
+user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
+user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
+user_pref("security.ssl3.dhe_rsa_camellia_128_sha", false);
+user_pref("security.ssl3.dhe_ecdsa_aes_128_sha", false);
+user_pref("security.ssl3.ecdh_ecdsa_rc4_128_sha", false);
+user_pref("security.ssl3.ecdh_rsa_aes_128_sha", false);
+user_pref("security.ssl3.ecdh_rsa_rc4_128_sha", false);
+user_pref("security.ssl3.ecdhe_ecdsa_aes_128_sha", false);
+user_pref("security.ssl3.ecdhe_ecdsa_rc4_128_sha", false);
+user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", false);
+user_pref("security.ssl3.ecdhe_rsa_rc4_128_sha", false);
+user_pref("security.ssl3.rsa_aes_128_sha", false);
+user_pref("security.ssl3.rsa_camellia_128_sha", false);
+user_pref("security.ssl3.rsa_rc4_128_md5", false);
+user_pref("security.ssl3.rsa_rc4_128_sha", false);
 
 // ***********************
 // ***** Preferences *****

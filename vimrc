@@ -22,6 +22,7 @@ set smartindent     " Indent intelligently (C/C++ mostly)
 set cindent         " Prevents indenting Python poorly
 set timeout timeoutlen=1000 " Limit delay when hitting esc
 set ttimeoutlen=100 " Limit delay when hitting esc
+set nowrap          " Don't wrap long lines (annoying when using splits)
 
 " Information status line
 set statusline=%F       " Full path filename
@@ -43,6 +44,7 @@ set showtabline=2 " Always show the tab line
 nnoremap <TAB> :tabnext<CR>
 " If <S-TAB> isn't working, try literal shift-tab: [Z
 nnoremap <S-TAB> :tabprevious<CR>
+"nnoremap [Z :tabprevious<CR>
 
 if has("autocmd")
     " Enable file type detection.
@@ -118,6 +120,7 @@ nnoremap <C-Q> <C-W>q
 
 " Syntastic preferences
 let g:syntastic_cpp_compiler_options = ' -Wall -Wextra -Weffc++ -std=c++0x'
+let g:syntastic_check_on_wq=0 " Don't run when writing and quitting
 
 " Often I hold shift too long when issuing these commands.
 command! Q q
