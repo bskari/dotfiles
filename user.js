@@ -18,6 +18,7 @@ user_pref("network.cookie.cookieBehavior", 3);
 user_pref("security.mixed_content.block_active_content", true);
 user_pref("security.mixed_content.block_display_content", true);
 // Disable weak encryption
+// Anything with 128 bit security is right out
 user_pref("security.ssl3.dhe_dss_aes_128_sha", false);
 user_pref("security.ssl3.dhe_dss_camellia_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
@@ -34,6 +35,12 @@ user_pref("security.ssl3.rsa_aes_128_sha", false);
 user_pref("security.ssl3.rsa_camellia_128_sha", false);
 user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
+// Anything without PFS is out
+user_pref("security.ssl3.rsa_seed_sha", false);
+user_pref("security.ssl3.rsa_camellia_256_sha", false);
+user_pref("security.ssl3.rsa_aes_256_sha", false);
+user_pref("security.ssl3.ecdh_rsa_aes_256_sha", false);
+user_pref("security.ssl3.ecdh_ecdsa_aes_256_sha", false);
 
 // ***********************
 // ***** Preferences *****
