@@ -11,6 +11,11 @@ user_pref("privacy.donottrackheader.enabled", true);
 // previous visit (available on Firefox 22.0)
 user_pref("network.cookie.cookieBehavior", 3);
 
+// Remove stuff on shutdown
+user_pref("privacy.sanitize.sanitizeOnShutdown", true);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.sessions", false);
+
 // ********************
 // ***** Security *****
 // ********************
@@ -57,3 +62,4 @@ user_pref("security.ssl3.rsa_aes_256_sha", true);
 // ***********************
 user_pref("browser.tabs.warnOnClose", false);
 user_pref("plugins.click_to_play", true);
+user_pref("general.warnOnAboutConfig", false);

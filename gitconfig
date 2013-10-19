@@ -1,0 +1,23 @@
+[user]
+    name = Brandon Skari
+    email = brandon@skari.org
+
+[merge]
+    conflictstyle = diff3
+
+[color]
+    ui = true
+    branch = auto
+    diff = auto
+    status = auto
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --oneline --graph --decorate
+
+[push]
+    default = current

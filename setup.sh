@@ -78,7 +78,13 @@ else
     echo 'No Firefox directory found'
 fi
 
-for i in bcrc ackrc ;
+for i in bcrc ackrc gitconfig ;
 do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
+done
+
+# Other scripts
+for i in setup-vim.sh ;
+do
+    bash "$i"
 done
