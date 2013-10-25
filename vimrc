@@ -136,3 +136,5 @@ nnoremap Q <ESC>
 noremap <F1> <ESC>
 noremap! <F1> <ESC>
 lnoremap <F1> <ESC>
+
+set pastetoggle=<F2>

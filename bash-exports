@@ -1,3 +1,8 @@
+# Use red stderr if available
+if [ -f "/lib/stderred.so" ]; then
+	export LD_PRELOAD="/lib/stderred.so"
+fi
+
 # Calculator config
 export BC_ENV_ARGS="$HOME/.bcrc"
 if [ ! -f "$BC_ENV_ARGS" ];

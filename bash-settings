@@ -1,8 +1,3 @@
-# Use red stderr if available
-if [ -f "/lib/stderred.so" ]; then
-	export LD_PRELOAD="/lib/stderred.so"
-fi
-
 # Print directory contents on cd
 function cd() {
     if [ 0 -eq $# ];
