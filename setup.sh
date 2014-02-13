@@ -78,7 +78,7 @@ else
     echo 'No Firefox directory found'
 fi
 
-for i in bcrc ackrc gitconfig ;
+for i in bcrc ackrc gitconfig toprc ;
 do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done
