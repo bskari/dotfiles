@@ -21,3 +21,6 @@
 
 [push]
     default = current
+
+[help]
+    autocorrect = 1
