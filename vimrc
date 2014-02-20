@@ -129,6 +129,7 @@ command! W w
 command! Wall wall
 command! WQ wq
 command! Wq wq
+command! Edit edit
 nmap Q: :q
 " Never use Ex mode -- I never *mean* to press it
 nnoremap Q <ESC>
