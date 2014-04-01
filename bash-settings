@@ -50,3 +50,8 @@ then
 else
     PS1="$GREEN_BOLD\u@\h$BLUE_BOLD \w $BLUE_BOLD\\$ $WHITE"
 fi
+
+if [ -d "$HOME/.bin" ];
+then
+    export PATH="$PATH:$HOME/.bin"
+fi
