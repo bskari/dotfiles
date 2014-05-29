@@ -1,0 +1,3 @@
+-- Enable \g MySQL style formatting by putting :g at the end of a query
+-- From http://serverfault.com/questions/34741/postgres-equivalent-to-mysqls-g
+\set g '\\set QUIET 1\\x\\g\\x\\set QUIET 0'
