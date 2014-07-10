@@ -44,7 +44,7 @@ then
     source /etc/bash_completion.d/git
 fi
 
-if [ ! -z "$(type __git_ps1)" ];
+if [ ! -z "$(type -t __git_ps1)" ];
 then
     PS1="$GREEN_BOLD\u@\h$BLUE_BOLD \w$YELLOW\$(__git_ps1) $BLUE_BOLD\\$ $WHITE"
 else

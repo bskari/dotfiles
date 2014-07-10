@@ -6,18 +6,23 @@ set -e
 # Fancy files that can do includes
 ##################################
 
-bashrc_file="$HOME/.bashrc"
-if [ ! -f "$bashrc_file" ];
-then
-    echo 'source $HOME/.dotfiles/bashrc' > "$bashrc_file"
-else
-    echo "$bashrc_file" 'already exists'
-fi
+function create_rc_file {
+    rc_file_name="$1"
+    text="$2"
+    if [ ! -f "${rc_file_name}" ];
+    then
+        echo "${text}" > "${rc_file_name}"
+    else
+        echo "${rc_file_name}" 'already exists'
+    fi
+}
 
-vimrc_file="$HOME/.vimrc"
-if [ ! -f "$vimrc_file" ];
-then
-    vimrc_string=$(cat <<VIMRC_STRING
+create_rc_file "${HOME}/.bashrc" "source ${HOME}/.dotfiles/bashrc"
+create_rc_file "${HOME}/.my.cnf" "!include ${HOME}/.dotfiles/my.cnf"
+create_rc_file "${HOME}/.tmux.conf" "source ${HOME}/.dotfiles/tmux.conf"
+create_rc_file "${HOME}/.hiverc" "source ${HOME}/.dotfiles/hiverc"
+
+vimrc_string=$(cat <<VIMRC_STRING
 set expandtab    " Use spaces instead of tabs
 "set noexpandtab  " Use tabs instead of spaces
 
@@ -26,26 +31,7 @@ call pathogen#infect() " Load pathogen plugin manager
 source $HOME/.dotfiles/vimrc
 VIMRC_STRING
 )
-    echo "$vimrc_string" > "$vimrc_file"
-else
-    echo "$vimrc_file" 'already exists'
-fi
-
-mysql_file="$HOME/.my.cnf"
-if [ ! -f "$mysql_file" ];
-then
-    echo '!include ~/.dotfiles/my.cnf' > "$mysql_file"
-else
-    echo "$mysql_file" 'already exists'
-fi
-
-tmux_file="$HOME/.tmux.conf"
-if [ ! -f "$tmux_file" ];
-then
-    echo 'source ~/.dotfiles/tmux.conf' > "$tmux_file"
-else
-    echo "$tmux_file" 'already exists'
-fi
+create_rc_file "${HOME}/.vimrc" "${vimrc_string}"
 
 ########################
 # Dumb soft linked files
@@ -78,7 +64,7 @@ else
     echo 'No Firefox directory found'
 fi
 
-for i in bcrc ackrc gitconfig psqlrc ;
+for i in bcrc ackrc gitconfig psqlrc hiverc ;
 do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done

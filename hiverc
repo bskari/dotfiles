@@ -1,0 +1,9 @@
+-- Show column headers
+set hive.cli.print.header = true;
+
+-- Show the current working Hive database as part of the prompt
+set hive.cli.print.current.db = true;
+
+-- Encourage Hive to be more agressive about using local-mode execution when
+-- possible. This speeds up queries for small data sets.
+set hive.exec.mode.local.auto = true;
