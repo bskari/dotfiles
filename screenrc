@@ -1,0 +1,8 @@
+# Instead of Control-a, make the escape/command character be Control-b
+escape ^Bb
+# Autodetach session on hangup instead of terminating screen completely
+autodetach on
+# Turn off the splash screen
+startup_message off
+# Show caption
+caption always "%{=b dy}%D, %d. %M %{=b dw}%c %{=b dy}%{= dg}${USER}@%{= dr}%H %={ %?%{= dc}%-Lw%?%{+b dy}(%{-b r}%n:%t%{+b dy})%?(%u)%?%{-dc}%?%{= dc}%+Lw%? %{=b dy}}"

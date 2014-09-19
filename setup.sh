@@ -64,8 +64,16 @@ else
     echo 'No Firefox directory found'
 fi
 
-for i in bcrc ackrc gitconfig psqlrc hiverc gdbinit ;
-do
+for i in \
+    ackrc \
+    bcrc \
+    gdbinit \
+    gitconfig \
+    hiverc \
+    hiverc \
+    psqlrc \
+    screenrc \
+; do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done
 
