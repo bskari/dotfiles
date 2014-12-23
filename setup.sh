@@ -72,6 +72,7 @@ for i in \
     hiverc \
     hiverc \
     psqlrc \
+    pylintrc \
     screenrc \
 ; do
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
