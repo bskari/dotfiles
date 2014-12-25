@@ -24,3 +24,6 @@
 
 [help]
     autocorrect = 1
+
+[core]
+	excludesfile = ~/.gitignore_global

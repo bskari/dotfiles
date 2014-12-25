@@ -69,7 +69,7 @@ for i in \
     bcrc \
     gdbinit \
     gitconfig \
-    hiverc \
+    gitignore_global \
     hiverc \
     psqlrc \
     pylintrc \
