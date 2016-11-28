@@ -57,7 +57,7 @@ then
     if [ "$directory_count" -eq 1 ];
     then
         create_soft_link "$HOME/.dotfiles/user.js" "$default_profile_directory/user.js"
-    else 
+    else
         echo 'Unable to find Firefox default profile directory'
     fi
 else
