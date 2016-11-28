@@ -19,8 +19,11 @@ gutter='git://github.com/airblade/vim-gitgutter.git'
 fugitive='git://github.com/tpope/vim-fugitive.git'
 # Syntastic, syntax and error highlighter
 syntastic='https://github.com/scrooloose/syntastic.git'
+# Google code format
+maktaba='https://github.com/google/vim-maktaba'
+codefmt='https://github.com/google/vim-codefmt.git'
 
-for repo in "$gutter" "$fugitive" "$syntastic" ;
+for repo in "$gutter" "$fugitive" "$syntastic" "$maktaba" "$codefmt";
 do
     folder=$(echo "$repo" | tr '/' '\n' | tail -n 1 | sed 's/\.git//')
     if [ ! -d "$folder" ];
@@ -29,4 +32,4 @@ do
     fi
 done
 
-popd 
+popd
