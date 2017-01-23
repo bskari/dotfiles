@@ -57,6 +57,9 @@ user_pref("security.ssl3.ecdhe_rsa_aes_128_sha", true);
 // Wikipedia: AES-256-SHA
 user_pref("security.ssl3.rsa_aes_256_sha", true);
 
+// When using a SOCKS proxy, do DNS lookups over it
+user_pref("network.proxy.socks_remote_dns", true);
+
 // ***********************
 // ***** Preferences *****
 // ***********************
