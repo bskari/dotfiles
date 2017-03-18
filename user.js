@@ -16,6 +16,9 @@ user_pref("privacy.sanitize.sanitizeOnShutdown", true);
 user_pref("privacy.clearOnShutdown.cookies", false);
 user_pref("privacy.clearOnShutdown.sessions", false);
 
+// No search suggestions from URL bar
+user_pref("browser.urlbar.suggest.searches", false);
+
 // ********************
 // ***** Security *****
 // ********************
