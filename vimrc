@@ -13,7 +13,8 @@ set autowrite       " Automatically save before commands like :make
 set hlsearch        " Highlight search matches
 set wildmenu        " Use bash style completion
 set wildmode=list:longest
-"set number         " Show line numbers
+set relativenumber  " Show relative line numbers...
+set number          " except for the current line, show the actual number
 set mouse=a         " Enable mouse support
 set lazyredraw      " Don't redraw the screen while executing macros
 set backspace=indent,eol,start " Backspace key deletes spaces and lines
@@ -23,6 +24,7 @@ set cindent         " Prevents indenting Python poorly
 set timeout timeoutlen=1000 " Limit delay when hitting esc
 set ttimeoutlen=100 " Limit delay when hitting esc
 set nowrap          " Don't wrap long lines (annoying when using splits)
+colorscheme elflord " Colors
 
 " Information status line
 set statusline=%F       " Full path filename
