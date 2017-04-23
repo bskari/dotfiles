@@ -63,6 +63,9 @@ user_pref("security.ssl3.rsa_aes_256_sha", true);
 // When using a SOCKS proxy, do DNS lookups over it
 user_pref("network.proxy.socks_remote_dns", true);
 
+// Don't show Unicode in URLs to avoid phishing attacks
+user_pref("network.IDN_show_punycode", true);
+
 // ***********************
 // ***** Preferences *****
 // ***********************
