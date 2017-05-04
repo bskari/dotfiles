@@ -1,6 +1,4 @@
 set tabstop=4       " Tab width is 4 columns
-set softtabstop=4   " Allow unindenting with backspace
-set shiftwidth=4    " Indent 4 columns with << and >> reindent
 set smarttab        " Backspace unindents
 syntax on           " Syntax highlighting
 set showcmd         " Show the pending command in the status bar

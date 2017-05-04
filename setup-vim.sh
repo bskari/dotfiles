@@ -22,8 +22,17 @@ syntastic='https://github.com/scrooloose/syntastic.git'
 # Google code format
 maktaba='https://github.com/google/vim-maktaba'
 codefmt='https://github.com/google/vim-codefmt.git'
+# Automatically detect and set indent settings, i.e. tabs vs. spaces
+sleuth='https://github.com/tpope/vim-sleuth.git'
 
-for repo in "$gutter" "$fugitive" "$syntastic" "$maktaba" "$codefmt";
+for repo in \
+    "$codefmt" \
+    "$fugitive" \
+    "$gutter" \
+    "$maktaba" \
+    "$sleuth" \
+    "$syntastic" \
+    ;
 do
     folder=$(echo "$repo" | tr '/' '\n' | tail -n 1 | sed 's/\.git//')
     if [ ! -d "$folder" ];
