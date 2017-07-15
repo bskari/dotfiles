@@ -18,6 +18,8 @@
     co = checkout
     df = diff
     lg = log --oneline --graph --decorate
+    unstage = reset HEAD
+    set-up = branch --set-upstream-to=origin/master master
 
 [push]
     default = current
