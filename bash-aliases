@@ -1,32 +1,38 @@
 # ls aliases
-alias ls="ls --color=tty"
-alias ll="ls -l"
-alias la="ls -A"
-alias l="ls --color=tty"
+alias ll='ls -l'
+alias la='ls -A'
+if [ "$(uname)" == 'Linux' ];
+then
+    alias l='ls --color=tty'
+    alias ls='ls --color=tty'
+fi
 
 # grep aliases
-alias grep="grep --color"
+alias grep='grep --color'
 
 # Always load the math library for bc
-alias bc="bc -l"
+alias bc='bc -l'
 
 # Open multiple files in tabs
-alias vim="vim -p"
+alias vim='vim -p'
 
 # Ignore color codes in less
-alias less="less -R"
+alias less='less -R'
 
 # Always show warnings in MySQL command line client
-alias mysql="mysql --show-warnings"
+alias mysql='mysql --show-warnings'
 
 # SVN alias
-if [ "`which colorsvn`" != "" ];
+if [ "`which colorsvn`" != '' ];
 then
-	alias svn="colorsvn"
+    alias svn='colorsvn'
 fi
 
 # Prompt when removing more than 3 files
-alias rm='rm -I'
+if [ "$(uname)" == 'Linux' ];
+then
+    alias rm='rm -I'
+fi
 
 # I can never remember the name of this good visual hex editor
 if [ "$(which ghex)" != '' ];

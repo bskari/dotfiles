@@ -7,8 +7,7 @@ set -e
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 if [ ! -f ~/.vim/autoload/pathogen.vim ];
 then
-    wget -O ~/.vim/autoload/pathogen.vim \
-        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 fi
 
 # Install different plugins

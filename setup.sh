@@ -53,14 +53,24 @@ function create_soft_link {
     fi
 }
 
-firefox_directory="$HOME/.mozilla/firefox"
-if [ -d "$firefox_directory" ];
+if [ "$(uname)" == 'Linux' ] ;
+then
+    firefox_directory="$HOME/.mozilla/firefox"
+elif [ "$(uname)" == 'Darwin' ] ;
+then
+    firefox_directory="$HOME/Library/Application Support/Firefox/Profiles/"
+else
+    firefox_direcotry=''
+fi
+if [ ! -z "${firefox_directory}" -a -d "${firefox_directory}" ];
 then
     default_profile_directory="$(ls -d $firefox_directory/*default)"
     directory_count=$(echo "$default_profile_directory" | wc -l)
     if [ "$directory_count" -eq 1 ];
     then
         create_soft_link "$HOME/.dotfiles/user.js" "$default_profile_directory/user.js"
+        mkdir -p "$default_profile_directory/chrome"
+        create_soft_link "$HOME/.dotfiles/userChrome.css" "$default_profile_directory/chrome/userChrome.css"
     else
         echo 'Unable to find Firefox default profile directory'
     fi
