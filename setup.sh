@@ -29,6 +29,10 @@ set expandtab    " Use spaces instead of tabs
 call pathogen#infect() " Load pathogen plugin manager
 
 source $HOME/.dotfiles/vimrc
+if filereadable("$HOME/.dotfiles/vimrc-custom")
+    source $HOME/.dotfiles/vimrc-custom
+endif
+source $HOME
 VIMRC_STRING
 )
 create_rc_file "${HOME}/.vimrc" "${vimrc_string}"
