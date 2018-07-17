@@ -58,22 +58,28 @@ then
     firefox_directory="$HOME/.mozilla/firefox"
 elif [ "$(uname)" == 'Darwin' ] ;
 then
-    firefox_directory="$HOME/Library/Application Support/Firefox/Profiles/"
+    firefox_directory="$HOME"'/Library/Application Support/Firefox/Profiles/'
 else
-    firefox_direcotry=''
+    firefox_directory=''
 fi
 if [ ! -z "${firefox_directory}" -a -d "${firefox_directory}" ];
 then
-    default_profile_directory="$(ls -d $firefox_directory/*default)"
-    directory_count=$(echo "$default_profile_directory" | wc -l)
+    # macOS has spaces in $firefox_directory so we need to do this weird pushd
+    # workaround
+    pushd "${firefox_directory}"
+    directory_count=$(ls -d *default | wc -l)
     if [ "$directory_count" -eq 1 ];
     then
-        create_soft_link "$HOME/.dotfiles/user.js" "$default_profile_directory/user.js"
-        mkdir -p "$default_profile_directory/chrome"
-        create_soft_link "$HOME/.dotfiles/userChrome.css" "$default_profile_directory/chrome/userChrome.css"
+        cd *default
+        echo 'Making links'
+        create_soft_link "$HOME/.dotfiles/user.js" "user.js"
+        mkdir -p "chrome"
+        create_soft_link "$HOME/.dotfiles/userChrome.css" "chrome/userChrome.css"
+        echo 'Done'
     else
         echo 'Unable to find Firefox default profile directory'
     fi
+    popd
 else
     echo 'No Firefox directory found'
 fi
