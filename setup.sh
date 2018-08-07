@@ -91,6 +91,7 @@ for i in \
     gitconfig \
     gitignore_global \
     hiverc \
+    irbrc \
     psqlrc \
     pylintrc \
     screenrc \
