@@ -92,6 +92,18 @@ for i in \
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done
 
+if [ ! -d "${HOME}/.bin" ] ;
+then
+    mkdir "${HOME}/.bin"
+    chown go-rw "${HOME}/.bin"
+    cp bin/* "${HOME}/.bin"
+    chmod go-rwx "${HOME}/.bin"
+    chmod go-rwx "${HOME}/.bin/*"
+    chmod u+rwx "${HOME}/.bin/*"
+else
+    echo '~/.bin already exists'
+fi
+
 # Other scripts
 for i in setup-vim.sh ;
 do

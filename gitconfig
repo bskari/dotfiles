@@ -20,6 +20,7 @@
     lg = log --oneline --graph --decorate
     unstage = reset HEAD
     set-up = branch --set-upstream-to=origin/master master
+    diffline = !sh -c 'git-diff-line.sh'
 
 [push]
     default = current
