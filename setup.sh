@@ -92,6 +92,7 @@ for i in \
     create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
 done
 
+# Custom bin directory
 if [ ! -d "${HOME}/.bin" ] ;
 then
     mkdir "${HOME}/.bin"
@@ -102,6 +103,24 @@ then
     chmod u+rwx "${HOME}/.bin/*"
 else
     echo '~/.bin already exists'
+fi
+
+# Use git-prompt if we can find it
+if [ ! -f "${HOME}/.dotfiles/git-prompt.sh" ] ;
+then
+    if [ -n "$(which locate)" ] ;
+    then
+        set +e
+        prompt="$(locate git-prompt.sh | grep -v dotfiles)"
+        set -e
+        if [ -n "${prompt}" ] ;
+        then
+            echo 'Linking git-prompt.sh'
+            ln -s "${prompt}" "${HOME}/.dotfiles/git-prompt.sh"
+        else
+            echo "Couldn't find git-prompt.sh, skipping linking"
+        fi
+    fi
 fi
 
 # Other scripts
