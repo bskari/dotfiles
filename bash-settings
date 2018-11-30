@@ -50,11 +50,6 @@ fi
 if [ -f "$HOME/.dotfiles/git-prompt.sh" ];
 then
     source "$HOME/.dotfiles/git-prompt.sh"
-elif [ -n 'locate git-prompt.sh' ];
-then
-    echo ln -s "$(locate git-prompt.sh)" "$HOME/.dotfiles/git-prompt.sh"
-    ln -s "$(locate git-prompt.sh)" "$HOME/.dotfiles/git-prompt.sh"
-    source "$HOME/.dotfiles/git-prompt.sh"
 fi
 if [ ! -z "$(type -t __git_ps1)" ];
 then
