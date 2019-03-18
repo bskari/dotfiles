@@ -12,26 +12,20 @@ function cd() {
     fi
 }
 
-# Make life more interesting, but only for interactive shells!
-# Otherwise, it breaks scp :(
-if [ -n "$PS1" ] && [ "`which fortune`" ] ; then
-	echo; fortune; echo
-fi
-
 # History ignores successive commands
 HISTCONTROL=ignoreboth
 # Append to history instead of overwriting when exiting the shell
 shopt -s histappend
 
-## A command that is the name of the directory just cd's into it
-#shopt -s autocd
 # Minor errors in the spelling of a directory in a command will be corrected
 shopt -s cdspell
-# THe pattern ** matches all files and directories recursively
+# The pattern ** matches all files and directories recursively
 if [ "$(uname)" == 'Linux' ];
 then
     shopt -s globstar
 fi
+# Prevent wacky cursor wrapping on long lines
+shopt -s checkwinsize
 
 # Fancy prompt
 #${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\]
