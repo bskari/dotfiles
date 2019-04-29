@@ -20,6 +20,10 @@
     lg = log --oneline --graph --decorate
     unstage = reset HEAD
     set-up = branch --set-upstream-to=origin/master master
+    diffline = !sh -c 'git-diff-line.sh'
+    current = rev-parse --abbrev-ref HEAD
+    setup = !CURRENT=$(git current) && git branch --set-upstream-to=origin/$CURRENT $CURRENT
+    stashdiff = !sh -c 'git stash show -p $1'
 
 [push]
     default = current

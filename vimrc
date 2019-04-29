@@ -49,14 +49,19 @@ nnoremap <S-TAB> :tabprevious<CR>
 if has("autocmd")
     " Enable file type detection.
     filetype plugin indent on
+    autocmd BufNewFile,BufRead *.cform set filetype=json
 endif
 
 " Allow . to execute once for each line of a visual selection
 vnoremap . :normal .<CR>
 
+" Make + jump to the marked column too, i.e. behave like `. Normally + just
+" goes to the next line but that's boring
+nnoremap + `
+onoremap + `
 " Make ` execute the contents of the 'a' register
 nnoremap ` @a
-" And let it work on multiple ilnes in visual mode
+" And let it work on multiple lines in visual mode
 vnoremap ` :normal @a<CR>
 
 " Auto reload files, if there's no conflict
