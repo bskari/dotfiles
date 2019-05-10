@@ -139,7 +139,7 @@ then
 fi
 
 # Other scripts
-for i in setup-vim.sh ;
+for i in setup-vim.sh setup-fish.sh ;
 do
     bash "$i"
 done
