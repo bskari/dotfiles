@@ -1,0 +1,40 @@
+# ls aliases
+alias ll='ls -l'
+alias la='ls -A'
+if test (uname) = 'Linux'
+    alias l='ls --color=tty'
+    alias ls='ls --color=tty'
+end
+
+# grep aliases
+alias grep='egrep --color'
+
+# Always load the math library for bc
+alias bc='bc -l'
+
+# Open multiple files in tabs
+alias vim='vim -p'
+
+# Ignore color codes in less
+alias less='less -R'
+
+# Always show warnings in MySQL command line client
+alias mysql='mysql --show-warnings'
+
+# SVN alias
+if test -z "(which colorsvn)"
+    alias svn='colorsvn'
+end
+
+# Prompt when removing more than 3 files
+if test (uname) = 'Linux'
+    alias rm='rm -I'
+end
+
+# I can never remember the name of this good visual hex editor
+if test -z "(which ghex)"
+    alias hexedit='ghex'
+elif test -z "(which jeex)"
+    # I prefer ghex, but jeex is okay
+    alias hexedit='jeex'
+end
