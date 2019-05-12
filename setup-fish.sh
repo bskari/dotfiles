@@ -13,6 +13,12 @@ function _setup_fish () {
             echo "${load_fish_config_files}" > "${HOME}/.config/fish/config.fish"
         fi
 
+        if [ ! -d "${HOME}/.config/fish/functions" ] ;
+        then
+            echo 'Creating fish functions directory'
+            mkdir "${HOME}/.config/fish/functions"
+        fi
+
         if [ -f "${HOME}/.config/fish/functions/fish_prompt.fish" ] ;
         then
             echo 'fish_prompt.fish already exists, skipping'
