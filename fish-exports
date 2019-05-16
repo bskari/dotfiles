@@ -15,8 +15,10 @@ end
 
 set more_path_entries '/sbin' '/usr/sbin' '/Users/bskari/.rvm/bin/rvm'
 for directory in $more_path_entries
-	if not contains $directory $PATH
-		set PATH $PATH $directory
+	if test -d $directory
+		if not contains $directory $PATH
+			set PATH $PATH $directory
+		end
 	end
 end
 set EDITOR 'vim'
