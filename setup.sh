@@ -11,7 +11,7 @@ function create_rc_file {
     text="$2"
     if [ ! -f "${rc_file_name}" ];
     then
-        echo "${text}" > "${rc_file_name}"
+        echo -e "${text}" > "${rc_file_name}"
     else
         echo "${rc_file_name}" 'already exists'
     fi
@@ -21,6 +21,7 @@ create_rc_file "${HOME}/.bashrc" "source ${HOME}/.dotfiles/bashrc"
 create_rc_file "${HOME}/.my.cnf" "!include ${HOME}/.dotfiles/my.cnf"
 create_rc_file "${HOME}/.tmux.conf" "source ${HOME}/.dotfiles/tmux.conf"
 create_rc_file "${HOME}/.hiverc" "source ${HOME}/.dotfiles/hiverc"
+create_rc_file "${HOME}/.gitconfig" "[include]\n    path = ${HOME}/.dotfiles/gitconfig"
 
 vimrc_string=$(cat <<VIMRC_STRING
 set expandtab    " Use spaces instead of tabs
@@ -28,11 +29,11 @@ set expandtab    " Use spaces instead of tabs
 
 call pathogen#infect() " Load pathogen plugin manager
 
-source $HOME/.dotfiles/vimrc
-if filereadable("$HOME/.dotfiles/vimrc-custom")
-    source $HOME/.dotfiles/vimrc-custom
+source ${HOME}/.dotfiles/vimrc
+if filereadable("${HOME}/.dotfiles/vimrc-custom")
+    source ${HOME}/.dotfiles/vimrc-custom
 endif
-source $HOME
+source ${HOME}
 VIMRC_STRING
 )
 create_rc_file "${HOME}/.vimrc" "${vimrc_string}"
@@ -55,10 +56,10 @@ function create_soft_link {
 
 if [ "$(uname)" == 'Linux' ] ;
 then
-    firefox_directory="$HOME/.mozilla/firefox"
+    firefox_directory="${HOME}/.mozilla/firefox"
 elif [ "$(uname)" == 'Darwin' ] ;
 then
-    firefox_directory="$HOME"'/Library/Application Support/Firefox/Profiles/'
+    firefox_directory="${HOME}/Library/Application Support/Firefox/Profiles/"
 else
     firefox_directory=''
 fi
@@ -72,9 +73,9 @@ then
     then
         cd *default
         echo 'Making links'
-        create_soft_link "$HOME/.dotfiles/user.js" "user.js"
+        create_soft_link "${HOME}/.dotfiles/user.js" "user.js"
         mkdir -p "chrome"
-        create_soft_link "$HOME/.dotfiles/userChrome.css" "chrome/userChrome.css"
+        create_soft_link "${HOME}/.dotfiles/userChrome.css" "chrome/userChrome.css"
         echo 'Done'
     else
         echo 'Unable to find Firefox default profile directory'
@@ -87,31 +88,29 @@ fi
 if [[ ! -f 'git-prompt.sh' && -n "$(locate git-prompt.sh | grep -v ${HOME})" ]] ;
 then
     prompt="$(locate git-prompt.sh | grep -v ${HOME})"
-    echo ln -s "${prompt}" "$HOME/.dotfiles/git-prompt.sh"
-    ln -s "${prompt}" "$HOME/.dotfiles/git-prompt.sh"
-    source "$HOME/.dotfiles/git-prompt.sh"
+    echo ln -s "${prompt}" "${HOME}/.dotfiles/git-prompt.sh"
+    ln -s "${prompt}" "${HOME}/.dotfiles/git-prompt.sh"
+    source "${HOME}/.dotfiles/git-prompt.sh"
 fi
 
 for i in \
     ackrc \
     bcrc \
     gdbinit \
-    gitconfig \
     gitignore_global \
-    hiverc \
     irbrc \
     psqlrc \
     pylintrc \
     screenrc \
 ; do
-    create_soft_link "$HOME/.dotfiles/$i" "$HOME/.$i"
+    create_soft_link "${HOME}/.dotfiles/$i" "${HOME}/.$i"
 done
 
 # Custom bin directory
 if [ ! -d "${HOME}/.bin" ] ;
 then
     mkdir "${HOME}/.bin"
-    chown go-rw "${HOME}/.bin"
+    chown "${USER}:${USER}" "${HOME}/.bin"
     cp bin/* "${HOME}/.bin"
     chmod go-rwx "${HOME}/.bin"
     chmod go-rwx "${HOME}/.bin/*"
