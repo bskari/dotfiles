@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Visual Studio Dark",
+    "vim.smartRelativeLine": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["`"],
+            "after": ["@", "a"]
+        }
+    ],
+    "vim.textwidth": 100,
+    "editor.wordWrap": "on",
+    "files.insertFinalNewline": true
+}

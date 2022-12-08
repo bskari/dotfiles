@@ -105,6 +105,19 @@ for i in \
     create_soft_link "${HOME}/.dotfiles/$i" "${HOME}/.$i"
 done
 
+# VS Code
+if [ `uname` == 'Linux' ] ;
+then
+    # -n for --no-clobber
+    cp -n settings.json "$HOME/.config/Code/User/settings.json"
+elif [ `uname` == 'Darwin' ] ;
+then
+    # -n for --no-clobber
+    cp -n settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+else
+    echo "*** Can\'t copy VS Code settings.json, not on Linux or Darwin?"
+fi
+
 # Custom bin directory
 if [ ! -d "${HOME}/.bin" ] ;
 then
