@@ -84,14 +84,6 @@ else
     echo 'No Firefox directory found'
 fi
 
-if [[ ! -f 'git-prompt.sh' && -n "$(locate git-prompt.sh | grep -v ${HOME})" ]] ;
-then
-    prompt="$(locate git-prompt.sh | grep -v ${HOME})"
-    echo ln -s "${prompt}" "${HOME}/.dotfiles/git-prompt.sh"
-    ln -s "${prompt}" "${HOME}/.dotfiles/git-prompt.sh"
-    source "${HOME}/.dotfiles/git-prompt.sh"
-fi
-
 for i in \
     ackrc \
     bcrc \
@@ -137,7 +129,7 @@ then
     if [ -n "$(which locate)" ] ;
     then
         set +e
-        prompt="$(locate git-prompt.sh | grep -v dotfiles)"
+        prompt="$(locate git-prompt.sh | grep -v dotfiles | grep -v 'Program Files' | head -n 1)"
         set -e
         if [ -n "${prompt}" ] ;
         then
