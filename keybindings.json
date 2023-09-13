@@ -1,0 +1,26 @@
+// Visual Studio Code keybindings
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+h", "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l", "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k", "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j", "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "cmd+e",  // cmd+e defaults to "actions.findWithSelection"
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+g",  // F12 isn't working on my external keyboard?
+        "command": "editor.action.goToDeclaration",
+        "when": "editorTextFocus"
+    }
+]

@@ -102,12 +102,14 @@ if [ `uname` == 'Linux' ] ;
 then
     # -n for --no-clobber
     cp -n settings.json "$HOME/.config/Code/User/settings.json"
+    cp -n keybindings.json "$HOME/.config/Code/User/keybindings.json"
 elif [ `uname` == 'Darwin' ] ;
 then
     # -n for --no-clobber
     cp -n settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+    cp -n keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
 else
-    echo "*** Can\'t copy VS Code settings.json, not on Linux or Darwin?"
+    echo "*** Can\'t copy VS Code settings, not on Linux or Darwin?"
 fi
 
 # Custom bin directory

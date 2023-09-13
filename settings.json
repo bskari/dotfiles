@@ -1,3 +1,4 @@
+// Visual Studio Code settings
 {
     "workbench.colorTheme": "Visual Studio Dark",
     "vim.smartRelativeLine": true,
