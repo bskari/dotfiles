@@ -143,4 +143,7 @@ noremap <F1> <ESC>
 noremap! <F1> <ESC>
 lnoremap <F1> <ESC>
 
+" I guess fugitive got rid of Gblame?
+command! Gblame Git blame
+
 set pastetoggle=<F2>

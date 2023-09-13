@@ -13,9 +13,9 @@ fi
 # Install different plugins
 pushd ~/.vim/bundle
 # Git gutter, shows Git status in gutter
-gutter='git://github.com/airblade/vim-gitgutter.git'
+gutter='https://github.com/airblade/vim-gitgutter.git'
 # Fugitive, a Git browser
-fugitive='git://github.com/tpope/vim-fugitive.git'
+fugitive='https://github.com/tpope/vim-fugitive.git'
 # Syntastic, syntax and error highlighter
 syntastic='https://github.com/scrooloose/syntastic.git'
 # Google code format
@@ -24,7 +24,7 @@ codefmt='https://github.com/google/vim-codefmt.git'
 # Automatically detect and set indent settings, i.e. tabs vs. spaces
 sleuth='https://github.com/tpope/vim-sleuth.git'
 # Opinionated Python formatting
-black='git://github.com/ambv/black.git'
+black='https://github.com/ambv/black.git'
 
 for repo in \
     "$codefmt" \
