@@ -100,6 +100,11 @@ done
 # VS Code
 if [ `uname` == 'Linux' ] ;
 then
+    mkdir -p "$HOME/.config/Code/User"
+    if [ -f "$HOME/.config/Code/User/settings.json" ] ;
+    then
+        echo "$HOME/.config/Code/User/settings.json already exists, skipping"
+    fi
     # -n for --no-clobber
     cp -n settings.json "$HOME/.config/Code/User/settings.json"
     cp -n keybindings.json "$HOME/.config/Code/User/keybindings.json"

@@ -1,6 +1,6 @@
 // Visual Studio Code settings
 {
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Default Dark+",
     "vim.smartRelativeLine": true,
     "vim.normalModeKeyBindings": [
         {
@@ -10,5 +10,18 @@
     ],
     "vim.textwidth": 100,
     "editor.wordWrap": "on",
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "arduino.useArduinoCli": true,
+    "editor.fontSize": 12,
+    "keyboard.dispatch": "keyCode", // Caps lock = escape
+    "editor.tabSize": 4,
+    "terminal.integrated.fontSize": 11,
+    "scm.inputFontSize": 11,
+    "debug.console.fontSize": 11,
+    "chat.editor.fontSize": 11,
+    "markdown.preview.fontSize": 11,
+    // Vim mode broke control + p quick open, so restore it
+    "vim.handleKeys": {
+        "<C-p>": false
+    }
 }
