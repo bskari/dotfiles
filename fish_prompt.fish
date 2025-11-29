@@ -81,11 +81,7 @@ function fish_prompt --description 'Write out the prompt'
     if not set -q HOSTNAME
         set HOSTNAME (hostname)
     end
-    if [ $HOSTNAME != 'BSKARI-US-LA' -a $HOSTNAME != 'localhost' ]
-        echo -n "$USER@$HOSTNAME "
-    else
-        echo -n "$USER "
-    end
+    echo -n (date +%H:%M:%S)
     set_color normal
 
     # PWD
