@@ -73,3 +73,4 @@ user_pref("browser.tabs.warnOnClose", false);
 user_pref("plugins.click_to_play", true);
 user_pref("general.warnOnAboutConfig", false);
 user_pref("browser.backspace_action", 2);  // Backspace doesn't go back
+user_pref("browser.search.widget.new", false);  // Keep the old search bar, where you can select the search engine
