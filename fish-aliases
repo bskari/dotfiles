@@ -7,7 +7,7 @@ if test (uname) = 'Linux'
 end
 
 # grep aliases
-alias grep='egrep --color'
+alias grep='grep -E --color'
 
 # Always load the math library for bc
 alias bc='bc -l'
