@@ -1,3 +1,4 @@
+set expandtab    " Use spaces instead of tabs (vim-sleuth overrides per file)
 set tabstop=4       " Tab width is 4 columns
 set smarttab        " Backspace unindents
 syntax on           " Syntax highlighting
@@ -147,3 +148,8 @@ lnoremap <F1> <ESC>
 command! Gblame Git blame
 
 set pastetoggle=<F2>
+
+" Machine-specific settings (untracked)
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif

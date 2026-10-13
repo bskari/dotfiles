@@ -1,5 +1,15 @@
-Dotfiles for various things.
+Dotfiles for various things, managed with GNU Stow (one package per directory).
 
-You can just run
-cd; bash .dotfiles/setup.sh
-to get everything set up.
+    git clone --recurse-submodules <repo> ~/.dotfiles
+    cd ~/.dotfiles
+    make install      # stows the core packages
+    make bootstrap    # Firefox links and VS Code settings (copied, not linked)
+
+Optional packages: make install PACKAGES="bash fish git vim hive mysql psql"
+Remove everything: make uninstall
+
+Machine-specific settings go in untracked files in $HOME:
+    ~/.config/bash/custom
+    ~/.config/fish/conf.d/local.fish
+    ~/.vimrc.local
+    ~/.gitconfig.local

@@ -1,4 +1,3 @@
-bash-quiz
-bash-custom
-fish-custom
-vimrc-custom
+# Machine-specific files live in $HOME and are not tracked:
+#   ~/.config/bash/custom, ~/.config/fish/conf.d/local.fish,
+#   ~/.vimrc.local, ~/.gitconfig.local
